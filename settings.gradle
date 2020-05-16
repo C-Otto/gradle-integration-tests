@@ -1,0 +1,4 @@
+rootProject.name = 'integration-tests'
+include 'module-one'
+include 'module-two'
+

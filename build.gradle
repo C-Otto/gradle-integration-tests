@@ -1,0 +1,31 @@
+subprojects {
+    apply plugin: 'java'
+
+    group 'de.cotto'
+    version '1.0-SNAPSHOT'
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_14
+        targetCompatibility = JavaVersion.VERSION_14
+        modularity.inferModulePath.set(true)
+    }
+
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:latest.release'
+        testImplementation 'org.assertj:assertj-core:latest.release'
+
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:latest.release'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+    tasks.withType(Test) {
+        maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
+    }
+}
