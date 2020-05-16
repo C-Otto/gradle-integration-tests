@@ -1,4 +1,4 @@
-package de.cotto.moduletwo;
+package de.cotto.integration_tests.moduletwo;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
